@@ -1,0 +1,12 @@
+@import "variables";
+@import "mixins";
+
+* {
+  letter-spacing: 1px;
+}
+
+.container {
+  max-width: $max-width;
+  padding: 0 10px;
+  margin: auto;
+}

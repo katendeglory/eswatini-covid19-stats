@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 
@@ -5,11 +6,10 @@ const PieChart = ({ data }) => (
   <ResponsivePie
     className="piechart"
     data={data}
-    margin={{ top: 5, right: 5, bottom: 100, left: 5 }}
+    margin={{ top: 10, right: 5, bottom: 100, left: 5 }}
     innerRadius={0.5}
     padAngle={0.7}
     cornerRadius={3}
-    // colors={{ scheme: 'accent' }}
     colors={data.map(element => element.color)}
     borderWidth={1}
     borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
@@ -26,17 +26,18 @@ const PieChart = ({ data }) => (
     animate={true}
     motionStiffness={90}
     motionDamping={15}
+    sortByValue={true}
 
     legends={[
       {
         anchor: 'bottom',
         direction: 'column',
-        translateY: 100,
+        translateY: 125,
         itemWidth: 150,
         itemHeight: 40,
         itemTextColor: 'var(--main-text-color)',
         symbolSize: 25,
-        symbolShape: 'circle',
+        symbolShape: 'square',
         effects: [
           {
             on: 'hover',

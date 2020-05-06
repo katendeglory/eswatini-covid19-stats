@@ -1,10 +1,4 @@
-$mobile-max-width: 900px;
-
-@mixin mobile {
-  @media (max-width: $mobile-max-width) {
-    @content;
-  }
-}
+@import "../scss/index.scss";
 
 .summary {
   .summary-title {
@@ -14,12 +8,16 @@ $mobile-max-width: 900px;
 
   .summary-grid {
     display: grid;
-    gap: 25px;
+    gap: 15px;
 
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+    @include tablet {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
     @include mobile {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
     }
 
     .summary-item {
@@ -56,16 +54,22 @@ $mobile-max-width: 900px;
     }
   }
 
-  .summary-chart-container {
-    margin: 0 auto;
-    width: 500px;
-    max-width: 90vw;
-    height: 650px;
+  .summary-chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 500px;
+    row-gap: 5rem;
+    column-gap: 25px;
 
-    text {
-      font-family: inherit !important;
-      font-size: inherit !important;
-      color: var(--main-text-color) !important;
+    .summary-chart-wrapper {
+      * {
+        overflow: visible !important;
+      }
+      text {
+        font-family: inherit !important;
+        font-size: 12.5px !important;
+        color: var(--main-text-color) !important;
+      }
     }
   }
 }

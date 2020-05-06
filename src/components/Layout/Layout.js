@@ -3,9 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 import { Helmet } from 'react-helmet';
-
 import './Layout.scss';
-// import './neumorphism.css';
 
 const Layout = (props) => {
 
