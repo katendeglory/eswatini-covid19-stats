@@ -14,8 +14,7 @@ const Layout = (props) => {
       <Helmet>
         <title>Eswatini Covid-19 Stats</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" />
-        {/* <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" /> */}
-        <link rel="stylesheet" href="http://10.0.0.5:5500/css/neumorphism-ui.css" />
+        <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
       </Helmet>
       <Header />
       <div className="container">

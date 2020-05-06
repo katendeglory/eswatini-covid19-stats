@@ -84,27 +84,20 @@ const Summary = () => {
       </h2>
 
       <div className="summary-chart-grid">
-
-        <div className="summary-chart-wrapper">
-          <PieChart
-            data={[
-              { "id": "Deaths", "label": "Deaths", "value": deaths, "color": "#ea423575" },
-              { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
-              { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
-            ]}
-          />
-        </div>
-
-        <div className="summary-chart-wrapper">
-          <PieChart
-            data={[
-              { "id": "Deaths", "label": "Deaths", "value": deaths, "color": "#ea423575" },
-              { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
-              { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
-            ]}
-          />
-        </div>
-
+        <PieChart
+          data={[
+            { "id": "Deaths", "label": "Deaths", "value": deaths, "color": "#ea423575" },
+            { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
+            { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
+          ]}
+        />
+        <PieChart
+          data={[
+            { "id": "Deaths", "label": "Deaths", "value": deaths, "color": "#ea423575" },
+            { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
+            { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
+          ]}
+        />
       </div>
 
     </div>

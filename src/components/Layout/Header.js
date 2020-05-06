@@ -2,6 +2,12 @@ import React from 'react';
 import './Header.scss';
 
 const Header = () => {
+
+  const changeUiMode = (e) => {
+    if (document.body.classList.contains('dark-mode')) document.body.classList.replace('dark-mode', 'light-mode')
+    else document.body.classList.replace('light-mode', 'dark-mode')
+  }
+
   return (
     <header className="sul-box-raised-2 sm">
       <nav className="container">
@@ -13,7 +19,7 @@ const Header = () => {
           <span className="brand-text">Eswatini Stats</span>
         </a>
         <div className="nav-menu">
-          {/* <input type="checkbox" className="sul-checkbox-type-2" /> */}
+          <input type="checkbox" className="sul-checkbox-type-2" onChange={changeUiMode} />
         </div>
       </nav>
     </header>

@@ -3,7 +3,7 @@
 .summary {
   .summary-title {
     text-align: center;
-    margin: 2rem auto;
+    margin: 7.5rem auto 2.5rem auto;
   }
 
   .summary-grid {
@@ -36,19 +36,19 @@
         border-radius: 5px;
 
         &.confirmed {
-          background-color: rgba($color: #4286f5, $alpha: 0.5);
+          background-color: rgba($color: #4286f5, $alpha: 0.35);
         }
 
         &.dead {
-          background-color: rgba($color: #ea4235, $alpha: 0.5);
+          background-color: rgba($color: #ea4235, $alpha: 0.35);
         }
 
         &.recovered {
-          background-color: rgba($color: #34a853, $alpha: 0.5);
+          background-color: rgba($color: #34a853, $alpha: 0.35);
         }
 
         &.active {
-          background-color: rgba($color: #fabc05, $alpha: 0.5);
+          background-color: rgba($color: #fabc05, $alpha: 0.35);
         }
       }
     }
@@ -60,16 +60,5 @@
     grid-auto-rows: 500px;
     row-gap: 5rem;
     column-gap: 25px;
-
-    .summary-chart-wrapper {
-      * {
-        overflow: visible !important;
-      }
-      text {
-        font-family: inherit !important;
-        font-size: 12.5px !important;
-        color: var(--main-text-color) !important;
-      }
-    }
   }
 }
