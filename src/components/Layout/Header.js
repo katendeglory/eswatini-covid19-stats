@@ -3,6 +3,8 @@ import './Header.scss';
 
 const Header = () => {
 
+  // document can be used as long as it is not called before render to trigger document is not defined
+  // it must be placed in a lifecycle method or an event listenner
   const changeUiMode = (e) => {
     if (document.body.classList.contains('dark-mode')) document.body.classList.replace('dark-mode', 'light-mode')
     else document.body.classList.replace('light-mode', 'dark-mode')
