@@ -3,8 +3,9 @@ import React from 'react';
 import { ResponsivePie } from '@nivo/pie';
 import './PieChart.scss';
 
-const PieChart = ({ data }) => (
-  <div className="pie-chart-wrapper">
+const PieChart = ({ data, title, className }) => (
+  <div className={`pie-chart-wrapper ${className}`}>
+    <div className="pie-chart-title">{title}</div>
     <ResponsivePie
       data={data}
       margin={{ top: 10, right: 5, bottom: 100, left: 5 }}
@@ -32,9 +33,9 @@ const PieChart = ({ data }) => (
       legends={[
         {
           anchor: 'bottom',
-          direction: 'column',
-          translateY: 125,
-          itemWidth: 150,
+          direction: 'row',
+          translateY: 50,
+          itemWidth: 105,
           itemHeight: 40,
           itemTextColor: 'var(--main-text-color)',
           symbolSize: 25,

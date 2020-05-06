@@ -1,10 +1,17 @@
 .pie-chart-wrapper {
+  padding: 1rem;
+
   * {
     overflow: visible !important;
   }
   text {
     font-family: inherit !important;
-    font-size: 12.5px !important;
+    font-size: 10px !important;
     color: var(--main-text-color) !important;
+  }
+
+  .pie-chart-title {
+    text-align: center;
+    font-size: 1.25rem;
   }
 }

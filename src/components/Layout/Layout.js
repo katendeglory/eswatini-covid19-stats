@@ -15,7 +15,6 @@ const Layout = (props) => {
     <div className="layout">
       <Helmet>
         <title>Eswatini Covid-19 Stats</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" />
         <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
       </Helmet>
       <Header />
@@ -23,8 +22,8 @@ const Layout = (props) => {
         <main>
           {props.children}
         </main>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

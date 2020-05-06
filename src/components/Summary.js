@@ -1,10 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import axios from 'axios';
 
-import './Summary.scss';
 import Loading from './Utils/Loading';
 import PieChart from './Utils/PieChart';
+
+import './Summary.scss';
 
 const query = gql`
   query {
@@ -23,9 +25,18 @@ const Summary = () => {
 
   const { data, loading, error } = useQuery(query);
 
-  console.log(data);
+  const [globalData, setGlobalData] = React.useState(null);
 
-  if (loading) return <Loading />
+  React.useEffect(() => {
+    const getGlobalData = async () => {
+      const res = await axios.get("https://api.covid19api.com/summary");
+      setGlobalData(res.data.Global);
+    }
+
+    getGlobalData();
+  }, []);
+
+  if (loading || !globalData) return <Loading />
   if (error) return <div>{error.message}</div>
 
   const { confirmed, deaths, recovered } = data.country.mostRecent;
@@ -90,13 +101,18 @@ const Summary = () => {
             { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
             { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
           ]}
+          className="sul-box-raised-2"
+          title="Eswatini Stats"
         />
+
         <PieChart
           data={[
-            { "id": "Deaths", "label": "Deaths", "value": deaths, "color": "#ea423575" },
-            { "id": "Recovered", "label": "Recovered", "value": recovered, "color": "#34a85375" },
-            { "id": "Active", "label": "Active", "value": active, "color": "#fabc0575" }
+            { "id": "Deaths", "label": "Deaths", "value": globalData.TotalDeaths, "color": "#ea423575" },
+            { "id": "Recovered", "label": "Recovered", "value": globalData.TotalRecovered, "color": "#34a85375" },
+            { "id": "Active", "label": "Active", "value": (globalData.TotalConfirmed - (globalData.TotalDeaths + globalData.TotalRecovered)), "color": "#fabc0575" },
           ]}
+          className="sul-box-raised-2"
+          title="World Stats"
         />
       </div>
 
