@@ -13,7 +13,7 @@ const Header = () => {
           <span className="brand-text">Eswatini Stats</span>
         </a>
         <div className="nav-menu">
-          <input type="checkbox" className="sul-checkbox-type-2" />
+          {/* <input type="checkbox" className="sul-checkbox-type-2" /> */}
         </div>
       </nav>
     </header>

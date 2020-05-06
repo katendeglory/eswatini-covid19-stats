@@ -5,7 +5,7 @@ const PieChart = ({ data }) => (
   <ResponsivePie
     className="piechart"
     data={data}
-    margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+    margin={{ top: 5, right: 5, bottom: 100, left: 5 }}
     innerRadius={0.5}
     padAngle={0.7}
     cornerRadius={3}
@@ -30,10 +30,10 @@ const PieChart = ({ data }) => (
     legends={[
       {
         anchor: 'bottom',
-        direction: 'row',
-        translateY: 70,
+        direction: 'column',
+        translateY: 100,
         itemWidth: 150,
-        itemHeight: 50,
+        itemHeight: 40,
         itemTextColor: 'var(--main-text-color)',
         symbolSize: 25,
         symbolShape: 'circle',

@@ -1,3 +1,11 @@
+$mobile-max-width: 900px;
+
+@mixin mobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
 .summary {
   .summary-title {
     text-align: center;
@@ -6,9 +14,13 @@
 
   .summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 25px;
-    margin-bottom: 5rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
 
     .summary-item {
       padding: 1rem;
@@ -47,7 +59,8 @@
   .summary-chart-container {
     margin: 0 auto;
     width: 500px;
-    height: 500px;
+    max-width: 90vw;
+    height: 650px;
 
     text {
       font-family: inherit !important;

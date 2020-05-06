@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "build": "gatsby clean && gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop --host=0.0.0.0 --port=80",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

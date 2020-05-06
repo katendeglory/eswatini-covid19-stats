@@ -19,7 +19,7 @@ const query = gql`
   }
 `;
 
-const Summary = (props) => {
+const Summary = () => {
 
   const { data, loading, error } = useQuery(query);
 
@@ -28,7 +28,7 @@ const Summary = (props) => {
   if (loading) return <Loading />
   if (error) return <div>{error.message}</div>
 
-  const { date, confirmed, deaths, recovered } = data.country.mostRecent;
+  const { confirmed, deaths, recovered } = data.country.mostRecent;
   const active = confirmed - (recovered + deaths);
 
   return (
@@ -78,12 +78,7 @@ const Summary = (props) => {
           </h1>
           <div className="active summary-item-line sul-box-raised-2 sm"></div>
         </div>
-
       </div>
-
-      <h2 className="summary-title">
-        Chart Repartition
-      </h2>
 
       <div className="summary-chart-container">
         <PieChart
