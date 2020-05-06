@@ -1,0 +1,27 @@
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+
+  nav {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+
+      .brand-logo {
+        width: 3rem;
+        margin-right: 10px;
+      }
+
+      // .brand-text {}
+    }
+
+    // .nav-menu {}
+  }
+}

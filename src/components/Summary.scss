@@ -1,0 +1,58 @@
+.summary {
+  .summary-title {
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 5rem;
+
+    .summary-item {
+      padding: 1rem;
+      text-align: center;
+
+      .summary-item-value {
+        font-weight: bolder;
+        text-shadow: 5px 5px 7px var(--color-shadow), -5px -5px 7px var(--color-white);
+        font-size: 2.5rem;
+      }
+
+      .summary-item-line {
+        height: 0.5rem;
+        width: 100%;
+        border-radius: 5px;
+
+        &.confirmed {
+          background-color: rgba($color: #4286f5, $alpha: 0.5);
+        }
+
+        &.dead {
+          background-color: rgba($color: #ea4235, $alpha: 0.5);
+        }
+
+        &.recovered {
+          background-color: rgba($color: #34a853, $alpha: 0.5);
+        }
+
+        &.active {
+          background-color: rgba($color: #fabc05, $alpha: 0.5);
+        }
+      }
+    }
+  }
+
+  .summary-chart-container {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+
+    text {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      color: var(--main-text-color) !important;
+    }
+  }
+}

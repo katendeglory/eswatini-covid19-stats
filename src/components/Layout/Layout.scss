@@ -1,0 +1,14 @@
+$max-width: 1000px;
+
+.container {
+  max-width: $max-width;
+  padding: 0 25px;
+  margin: auto;
+}
+
+.layout {
+  main {
+    min-height: 100vh;
+    margin-top: 7.5rem;
+  }
+}
