@@ -47,6 +47,8 @@ const RecentStats = () => {
 
     const formattedDate = item.date.slice(5).replace("-", "/");
 
+    item.date = moment(item.date).format('YYYY-MM-DD')
+
     deathsChartArray.push({ x: formattedDate, y: dailyDeaths })
     confirmedChartArray.push({ x: formattedDate, y: dailyConfirmed })
     recoveredChartArray.push({ x: formattedDate, y: dailyRecovered })
@@ -81,7 +83,7 @@ const RecentStats = () => {
           <MaterialTable
             title="Table Summary Past 10 Days"
             columns={[
-              { title: 'Date...', field: 'date', type: 'numeric' },
+              { title: 'Date...', field: 'date', type: 'date', defaultSort: "desc" },
               { title: 'Deaths', field: 'dailyDeaths', type: 'numeric' },
               { title: 'Confirmed', field: 'dailyConfirmed', type: 'numeric' },
               { title: 'Recovered', field: 'dailyRecovered', type: 'numeric' },

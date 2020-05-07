@@ -4,6 +4,7 @@ import { gql } from 'apollo-boost';
 import Loading from './Utils/Loading';
 import LineChart from './Utils/LineChart';
 import MaterialTable from 'material-table';
+import moment from 'moment';
 
 import './AllTimeStats.scss';
 
@@ -19,7 +20,6 @@ const query = gql`
 `;
 
 const AllTimeStats = () => {
-
   const { data, loading, error } = useQuery(query);
 
   if (loading) return <Loading />
@@ -40,6 +40,8 @@ const AllTimeStats = () => {
       dailyConfirmed = item.confirmed - data.results[i - 1].confirmed;
       dailyRecovered = item.recovered - data.results[i - 1].recovered;
     }
+
+    item.date = moment(item.date).format('YYYY-MM-DD')
 
     deathsChartArray.push({ x: item.date, y: dailyDeaths })
     confirmedChartArray.push({ x: item.date, y: dailyConfirmed })
@@ -77,13 +79,13 @@ const AllTimeStats = () => {
           <MaterialTable
             title="Table Summary Since Day 1"
             columns={[
-              { title: 'Date...', field: 'date', type: 'numeric' },
+              { title: 'Date...', field: 'date', type: 'date', defaultSort: "desc" },
               { title: 'Deaths', field: 'dailyDeaths', type: 'numeric' },
               { title: 'Confirmed', field: 'dailyConfirmed', type: 'numeric' },
               { title: 'Recovered', field: 'dailyRecovered', type: 'numeric' },
             ]}
             data={enhancedData}
-            options={{ search: false }}
+            options={{ search: false, sorting: true }}
           />
         </div>
       </div>
