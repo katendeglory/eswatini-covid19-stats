@@ -1,7 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import axios from 'axios';
 
 import Loading from './Utils/Loading';
 import PieChart from './Utils/PieChart';
@@ -18,6 +17,14 @@ const query = gql`
         recovered
       }
     }
+
+    countries {
+      mostRecent {
+        confirmed
+        deaths
+        recovered
+      }
+    }
   }
 `;
 
@@ -25,22 +32,19 @@ const Summary = () => {
 
   const { data, loading, error } = useQuery(query);
 
-  const [globalData, setGlobalData] = React.useState(null);
-
-  React.useEffect(() => {
-    const getGlobalData = async () => {
-      const res = await axios.get("https://api.covid19api.com/summary");
-      setGlobalData(res.data.Global);
-    }
-
-    getGlobalData();
-  }, []);
-
-  if (loading || !globalData) return <Loading />
+  if (loading) return <Loading />
   if (error) return <div>{error.message}</div>
 
   const { confirmed, deaths, recovered } = data.country.mostRecent;
   const active = confirmed - (recovered + deaths);
+
+  const { globalDeaths, globalconfirmed, globalRecovered } = data.countries.reduce((acc, item) => {
+    acc.globalDeaths += item.mostRecent.deaths;
+    acc.globalconfirmed += item.mostRecent.confirmed;
+    acc.globalRecovered += item.mostRecent.recovered;
+    return acc;
+  }, { globalDeaths: 0, globalconfirmed: 0, globalRecovered: 0 });
+
 
   return (
     <div className="summary">
@@ -107,9 +111,9 @@ const Summary = () => {
 
         <PieChart
           data={[
-            { "id": "Deaths", "label": "Deaths", "value": globalData.TotalDeaths, "color": "#ea423575" },
-            { "id": "Recovered", "label": "Recovered", "value": globalData.TotalRecovered, "color": "#34a85375" },
-            { "id": "Active", "label": "Active", "value": (globalData.TotalConfirmed - (globalData.TotalDeaths + globalData.TotalRecovered)), "color": "#fabc0575" },
+            { "id": "Deaths", "label": "Deaths", "value": globalDeaths, "color": "#ea423575" },
+            { "id": "Recovered", "label": "Recovered", "value": globalRecovered, "color": "#34a85375" },
+            { "id": "Active", "label": "Active", "value": (globalconfirmed - (globalDeaths + globalRecovered)), "color": "#fabc0575" },
           ]}
           className="sul-box-raised-2"
           title="World Stats"
@@ -119,7 +123,5 @@ const Summary = () => {
     </div>
   );
 }
-
-
 
 export default Summary;
