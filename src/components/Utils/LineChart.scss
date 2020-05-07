@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+// Title
+.line-chart-title {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.line-chart-subtitle {
+  display: none;
+  @include mobile {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+}
+
+// Chart
+.line-chart-wrapper-container {
+  //Viewable chart area, will be scrollable on mobile
+  @include mobile {
+    width: 90vw;
+    overflow: scroll;
+    overflow-y: hidden;
+    margin: auto;
+  }
+
+  .line-chart-wrapper {
+    //Chart, will be larger on mobile and require scrolling
+    height: 450px;
+    max-height: 450px;
+    @include tablet {
+      height: 100vh;
+    }
+
+    width: 90vw;
+    max-width: $max-width;
+    margin: auto;
+
+    @include mobile {
+      width: 90vw;
+      height: 60vh;
+      &.line-chart-scrollable {
+        width: 200vw;
+      }
+    }
+
+    text {
+      font-family: inherit !important;
+      font-size: 10px !important;
+      color: var(--main-text-color) !important;
+      fill: var(--main-text-color) !important;
+    }
+  }
+}

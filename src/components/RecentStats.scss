@@ -1,0 +1,33 @@
+.recent-stats {
+  margin-top: 5rem;
+
+  .table-wrapper {
+    font-size: 10px;
+    text-align: center;
+    margin: 4rem auto;
+
+    div,
+    thead * {
+      background: var(--color-bg) !important;
+    }
+
+    * {
+      color: var(--main-text-color) !important;
+      border-color: rgba($color: #000000, $alpha: 0.1) !important;
+      border-width: 1px;
+    }
+
+    *.material-icons {
+      color: var(--main-text-color) !important;
+    }
+
+    ::-webkit-scrollbar,
+    ::-webkit-scrollbar-button,
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track-piece {
+      all: unset !important;
+    }
+  }
+}
