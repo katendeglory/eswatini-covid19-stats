@@ -1,5 +1,5 @@
 import React from 'react';
-import ApolloClient, { HttpLink } from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import fetch from 'isomorphic-fetch';
 

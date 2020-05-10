@@ -13,7 +13,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "git-deploy": "git add . && git commit -am \"Yet another commit\" && git push -u origin master",
-    "surge-deploy": "surge teardown http://covid19eswatini.surge.sh && surge public"
+    "surge-deploy": "surge --project public --domain http://covid19eswatini.surge.sh/"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -23,6 +23,8 @@
     "apollo-boost": "^0.4.7",
     "axios": "^0.19.2",
     "gatsby": "^2.21.0",
+    "gatsby-plugin-manifest": "^2.4.2",
+    "gatsby-plugin-offline": "^3.2.1",
     "gatsby-plugin-sass": "^2.3.1",
     "graphql": "^15.0.0",
     "isomorphic-fetch": "^2.2.1",
