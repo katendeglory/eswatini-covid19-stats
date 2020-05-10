@@ -14,12 +14,6 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#fff`,
       },
-    },
-    {
-      resolve: `gatsby-plugin-offline`,
-      options: {
-        precachePages: [`/*`],
-      },
-    },
+    }
   ]
 }
