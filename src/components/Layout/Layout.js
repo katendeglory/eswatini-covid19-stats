@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 import { Helmet } from 'react-helmet';
 import Loading from './../Utils/Loading';
-
+import ls from 'local-storage';
 import './Layout.scss';
 
 const Layout = (props) => {
@@ -14,7 +14,7 @@ const Layout = (props) => {
   // document can be used as long as it is not called before render to trigger document is not defined
   // it must be placed in a lifecycle method or an event listenner
   React.useEffect(() => {
-    document.body.classList.add('dark-mode');
+    document.body.classList.add(ls.get('ui-mode') || 'dark-mode');
     setLoading(false);
   }, []);
 

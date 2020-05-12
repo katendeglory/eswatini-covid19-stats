@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: 'Covid-19 Eswatini',
+    author: 'Glory Katende'
+  },
+  pathPrefix: 'eswatini-covid19-stats',
   plugins: [
     `gatsby-plugin-sass`,
     {
@@ -11,7 +16,7 @@ module.exports = {
         display: `standalone`,
         icon: `static/favicon.ico`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#000`,
         theme_color: `#fff`,
       },
     }

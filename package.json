@@ -13,7 +13,8 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "git-deploy": "git add . && git commit -am \"Yet another commit\" && git push -u origin master",
-    "surge-deploy": "surge --project public --domain http://covid19eswatini.surge.sh/"
+    "surge-deploy": "gatsby clean && gatsby build && surge --project public --domain http://covid19eswatini.surge.sh/",
+    "gh-pages-deploy": "yarn run git-deploy && gatsby clean && gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -27,6 +28,7 @@
     "gatsby-plugin-sass": "^2.3.1",
     "graphql": "^15.0.0",
     "isomorphic-fetch": "^2.2.1",
+    "local-storage": "^2.0.0",
     "material-table": "^1.57.2",
     "moment": "^2.25.3",
     "node-sass": "^4.14.1",
@@ -39,9 +41,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/katendeglory/eswatini-covid19-stats"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/katendeglory/eswatini-covid19-stats/issues"
   }
 }
