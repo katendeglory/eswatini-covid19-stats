@@ -23,22 +23,21 @@ const Layout = (props) => {
   if (loading) return <Loading />
 
   return (
-    <OutboundLink href='https://covid19eswatini.surge.sh/'>
-      <div className="layout">
-        <Helmet>
-          <title>Eswatini Covid-19 Stats</title>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-          <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
-        </Helmet>
-        <Header />
-        <div className="container">
-          <main>
-            {props.children}
-          </main>
-        </div>
-        <Footer />
+    <div className="layout">
+      <Helmet>
+        <title>Eswatini Covid-19 Stats</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
+      </Helmet>
+      <OutboundLink className="analytics-link" href='https://covid19eswatini.surge.sh/' />
+      <Header />
+      <div className="container">
+        <main>
+          {props.children}
+        </main>
       </div>
-    </OutboundLink>
+      <Footer />
+    </div>
   );
 }
 
