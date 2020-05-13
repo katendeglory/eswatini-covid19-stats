@@ -19,13 +19,5 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
-    {
-      resolve: `gatsby-plugin-gtag`,
-      options: {
-        trackingId: `UA-166294029-2`,
-        head: false,
-        anonymize: true,
-      },
-    },
   ]
 }

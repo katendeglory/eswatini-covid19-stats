@@ -23,6 +23,14 @@ const Layout = (props) => {
   return (
     <div className="layout">
       <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166294029-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-166294029-2');
+        </script>
         <title>Eswatini Covid-19 Stats</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
