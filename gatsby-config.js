@@ -9,16 +9,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Eswatini Covid-19 Stats`,
-        short_name: `Eswatini Covid-19 Stats`,
-        description: `Stats on the spread of Covid-19 in the Kingdom of Eswatini.`,
-        lang: `en`,
-        display: `standalone`,
+        name: "GatsbyJS",
+        short_name: "GatsbyJS",
+        start_url: "/",
+        background_color: "#0097e6",
+        theme_color: "#FF5722",
+        display: "standalone",
         icon: `static/favicon.ico`,
-        start_url: `/`,
-        background_color: `#000`,
-        theme_color: `#fff`,
+        crossOrigin: `use-credentials`,
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-166294029-2`,
+        head: false,
+        anonymize: true,
+      },
+    },
   ]
 }
