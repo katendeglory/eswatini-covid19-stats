@@ -29,11 +29,11 @@ const Layout = (props) => {
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/css/neumorphism-ui.css" />
       </Helmet>
-      <OutboundLink className="analytics-link" href='https://covid19eswatini.surge.sh/' />
       <Header />
       <div className="container">
         <main>
           {props.children}
+          <OutboundLink className="analytics-link" href='https://covid19eswatini.surge.sh/' />
         </main>
       </div>
       <Footer />
