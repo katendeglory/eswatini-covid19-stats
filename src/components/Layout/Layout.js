@@ -7,7 +7,7 @@ import Loading from './../Utils/Loading';
 import ls from 'local-storage';
 import './Layout.scss';
 
-import { OutboundLink } from 'gatsby-plugin-gtag';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const Layout = (props) => {
 
