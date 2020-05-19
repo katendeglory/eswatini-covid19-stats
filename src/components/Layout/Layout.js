@@ -29,7 +29,6 @@ const Layout = (props) => {
       <Helmet>
         <title>Eswatini Covid-19 Stats</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        {/* <link rel="stylesheet" href="https://katendeglory.github.io/soft-ui-library/dist/css/neumorphism-ui.css" /> */}
       </Helmet>
       <Header />
       <div className="container">
