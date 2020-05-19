@@ -11446,6 +11446,11 @@ sockjs@0.3.19:
     faye-websocket "^0.10.0"
     uuid "^3.0.1"
 
+soft-ui-library@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/soft-ui-library/-/soft-ui-library-1.0.6.tgz#9323d3e8e259bad442036f01fbd006cb05238544"
+  integrity sha512-y3Sg7K3EBkdYoE9w9GP8aoRRvCGAs1a96SnIgQYVx+XNXaabjVk1RdkUsXHsNRJ1U3lUskICGms5lthGRF6Www==
+
 sort-keys@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/sort-keys/-/sort-keys-1.1.2.tgz#441b6d4d346798f1b4e49e8920adfba0e543f9ad"
