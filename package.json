@@ -14,7 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "git-deploy": "git add . && git commit -am \"Yet another commit\" && git push -u origin master",
     "surge-deploy": "gatsby clean && gatsby build && surge --project public --domain https://covid19eswatini.surge.sh/",
-    "gh-pages-deploy": "yarn run git-deploy && gatsby clean && gatsby build --prefix-paths && gh-pages -d public"
+    "gh-pages-deploy": "yarn run git-deploy && gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "yarn run surge-deploy && yarn run gh-pages-deploy"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
@@ -37,6 +38,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-loading": "^2.0.3",
     "soft-ui-library": "^1.0.6"
   },
   "devDependencies": {

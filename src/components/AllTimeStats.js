@@ -51,20 +51,15 @@ const AllTimeStats = () => {
   });
 
   const lineChartData = [
+    { "id": "deaths", "color": "#ea423575", "data": deathsChartArray },
+    { "id": "confirmed", "color": "#fabc0575", "data": confirmedChartArray },
+    { "id": "recovered", "color": "#34a85375", "data": recoveredChartArray }
+  ];
+
+  const activeCasesStatusChartData = [
     {
-      "id": "deaths",
-      "color": "#ea423575",
-      "data": deathsChartArray
-    },
-    {
-      "id": "confirmed",
-      "color": "#fabc0575",
-      "data": confirmedChartArray
-    },
-    {
-      "id": "recovered",
-      "color": "#34a85375",
-      "data": recoveredChartArray
+      "id": "active cases", "color": "#FF572299",
+      "data": data.results.map(item => ({ y: item.confirmed - item.recovered, x: item.date }))
     }
   ];
 
@@ -73,6 +68,11 @@ const AllTimeStats = () => {
       <div className="all-time-stats">
 
         <LineChart data={lineChartData} title="Linear Progression Since Day 1"
+          hideXAxis={true} hideYAxis={true} className="line-chart-scrollable" />
+
+        <div style={{ height: "4rem" }}></div>
+
+        <LineChart data={activeCasesStatusChartData} title="Active Cases Evolution Since Day 1"
           hideXAxis={true} hideYAxis={true} className="line-chart-scrollable" />
 
         <div className="table-wrapper">
@@ -88,6 +88,7 @@ const AllTimeStats = () => {
             options={{ search: false, sorting: true }}
           />
         </div>
+
       </div>
     </div>
   )
