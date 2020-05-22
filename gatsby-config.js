@@ -9,8 +9,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "Eswatini Stats",
+        short_name: "Eswatini Stats",
         start_url: "/",
         background_color: "#333",
         theme_color: "#333",
@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-166294029-2",
-        head: false,
+        head: true,
       },
     },
   ]

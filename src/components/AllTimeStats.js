@@ -58,8 +58,8 @@ const AllTimeStats = () => {
 
   const activeCasesStatusChartData = [
     {
-      "id": "active cases", "color": "#FF572299",
-      "data": data.results.map(item => ({ y: item.confirmed - item.recovered, x: item.date }))
+      "id": "active cases", "color": "#fabc0599",
+      "data": data.results.map((item => ({ y: item.confirmed - (item.recovered + item.deaths), x: item.date })))
     }
   ];
 

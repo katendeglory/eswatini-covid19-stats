@@ -92,6 +92,27 @@ const Summary = () => {
           </h1>
           <div className="active summary-item-line sul-box-raised-2 sm"></div>
         </div>
+
+        <div className="summary-item sul-box-raised-2">
+          <h3 className="summary-item-title">
+            Recovery Rate
+          </h3>
+          <h1 className="summary-item-value">
+            {((recovered / confirmed) * 100).toFixed(2)}%
+          </h1>
+          <div className="recovery-rate summary-item-line sul-box-raised-2 sm"></div>
+        </div>
+
+        <div className="summary-item sul-box-raised-2">
+          <h3 className="summary-item-title">
+            Death Rate
+          </h3>
+          <h1 className="summary-item-value">
+            {((deaths / confirmed) * 100).toFixed(2)}%
+          </h1>
+          <div className="death-rate summary-item-line sul-box-raised-2 sm"></div>
+        </div>
+
       </div>
 
       <h2 className="summary-title">
